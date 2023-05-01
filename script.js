@@ -56,14 +56,16 @@ document.onkeydown = function(event) {
   textarea.innerHTML = event;
 }
 
-let button = document.querySelectorAll('.btn');
+let buttons = document.querySelectorAll('.btn');
 
- document.onkeydown = function(event) {
-    textarea.innerHTML = event;
-  } 
-
-  button.forEach(item => item.addEventListener('click', function() {
-  if(item.classList.contains('space-btn')) {
-    textarea.innerHTML += ' ';
-  } else { textarea.innerHTML += item.textContent;}
-}));
+ buttons.forEach(item => item.addEventListener('click', function() {
+    if (item.classList.contains('space-btn')) {
+      textarea.innerHTML += ' ';
+    } else if (item.classList.contains('enter-btn')) {
+      textarea.innerHTML += '\n'
+    } else if (item.classList.contains('backspace-btn')) {
+      textarea.value.slice(0, -1); 
+    } else 
+     textarea.innerHTML += item.innerText;
+  }
+));

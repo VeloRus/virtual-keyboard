@@ -52,6 +52,12 @@ body {
   border-radius: 5px;
 }
 
+.active {
+  background: #e4e4e4;
+  box-shadow: 0 2px #adb5bb;
+  transform: translateY(2px);
+}
+
 .space-btn {
   width: 51%;
 }
